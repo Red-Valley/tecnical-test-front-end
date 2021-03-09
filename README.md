@@ -29,4 +29,5 @@
 
 ## To apply for the job you must ...
     - Fork this repository. 
-    - Make a PR with the url to your application.
+    - Make a PR with the code and the url to your application
+
