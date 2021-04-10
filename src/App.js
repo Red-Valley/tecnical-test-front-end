@@ -27,7 +27,7 @@ function App() {
     if (!items.find(({ title }) => title === taskName)) {
       setItems([...items, { title: taskName, done: false }]);
     } else {
-      alert("La tarea ya esta");
+      alert("There is already a task with this name");
     }
   };
 

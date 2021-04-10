@@ -6,7 +6,7 @@ const TaskCreator = ({ addTask }) => {
   const updateTask = (event) => setNewTask(event.target.value);
 
   const createTask = (task) => {
-    if (newTask !== "") {
+    if (task !== "") {
       addTask(task);
       setNewTask("");
     } else {
