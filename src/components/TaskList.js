@@ -26,10 +26,11 @@ const TaskList = ({
             <td>
               <input
                 type="checkbox"
-                className="checkbox"
+                id={`active-${index}`}
                 checked={task.done}
                 onChange={() => toggleChecked(task)}
               />
+              <label htmlFor={`active-${index}`} />
             </td>
             <td>
               <div
