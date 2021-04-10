@@ -7,12 +7,18 @@
   color: white;
 }
 
-.header tr th {
+.header tr th,
+.message {
   user-select: none;
   padding: 15px;
 }
 
-.items-task td {
+.items-task {
+  cursor: move;
+}
+
+.items-task td,
+.message {
   text-align: center;
   padding: 10px 18px !important;
 }

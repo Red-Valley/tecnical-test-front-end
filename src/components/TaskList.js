@@ -1,14 +1,32 @@
 import React from "react";
 
-const TaskList = ({ items, toggleChecked, removeTask }) => {
+const TaskList = ({
+  items,
+  toggleChecked,
+  removeTask,
+  onDragStart,
+  onDragOver,
+  onDrop,
+  onDragLeave,
+}) => {
   return (
     <>
       {items.length ? (
         items.map((task, index) => (
-          <tr key={`task-${index}`} className="items-task">
+          <tr
+            key={`task-${index}`}
+            data-position={index}
+            draggable
+            onDragStart={onDragStart}
+            onDragOver={onDragOver}
+            onDrop={onDrop}
+            onDragLeave={onDragLeave}
+            className="items-task"
+          >
             <td>
               <input
                 type="checkbox"
+                className="checkbox"
                 checked={task.done}
                 onChange={() => toggleChecked(task)}
               />
@@ -35,7 +53,9 @@ const TaskList = ({ items, toggleChecked, removeTask }) => {
         ))
       ) : (
         <tr>
-          <td colSpan="2">{"There aren't things to do"}</td>
+          <td colSpan="2" className="message">
+            {"There aren't things to do"}
+          </td>
         </tr>
       )}
     </>
