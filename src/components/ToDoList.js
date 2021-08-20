@@ -52,8 +52,8 @@ function ToDoList() {
       *@param (any)id
     */
     const deleteTask = (id) => {
-        const arrayFiltrado = taskItems.filter(task => task.id !== id)
-        setTaskItems(arrayFiltrado);
+        const arrayFiltered = taskItems.filter(task => task.id !== id)
+        setTaskItems(arrayFiltered);
 
     }
 
