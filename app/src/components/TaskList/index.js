@@ -5,12 +5,8 @@ import PropTypes from 'prop-types'
 import TrashIcon from './assets/trash.svg'
 
 const TaskListComponent = ({ title, preloadTasks }) => {
-  const [tasksData, setTaskData] = useState([])
+  const [tasksData, setTaskData] = useState([...preloadTasks])
   const [taskText, setTaskText] = useState('')
-
-  useEffect(() => {
-    setTaskData(preloadTasks)
-  }, [preloadTasks])
 
   const addTask = (event) => {
     if (event.key === 'Enter' && taskText !== '') {
