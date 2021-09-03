@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ReactSortable } from "react-sortablejs";
+import { v4 } from 'uuid'
 
 import PropTypes from 'prop-types'
 import TrashIcon from './assets/trash.svg'
@@ -11,7 +12,7 @@ const TaskListComponent = ({ title, preloadTasks }) => {
   const addTask = (event) => {
     if (event.key === 'Enter' && taskText !== '') {
       const newData = [...tasksData, {
-        id: (tasksData.length + 1),
+        id: v4(),
         label: taskText.trim(),
         done: false
       }]
@@ -66,11 +67,11 @@ const TaskListComponent = ({ title, preloadTasks }) => {
       {/* TaskList */}
       <section className="bg-white w-full">
         <ReactSortable list={tasksData} setList={setTaskData}>
-          {tasksData.map((task) => {
+          {tasksData.map((task, index) => {
             return (
               <div
                 className="flex flex-row h-full border-1 border-b-2"
-                key={`task-${task.id}`}
+                key={`task-${task.id}-${index}}`}
               >
                 <div className="flex w-10 h-auto border-r-2 border-red-100">
                   <div

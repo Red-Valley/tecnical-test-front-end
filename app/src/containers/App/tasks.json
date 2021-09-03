@@ -1,6 +1,11 @@
 {
   "tasks": [
     {
+      "id": 0,
+      "label": "Unit Test in TDD",
+      "done": false
+    },
+    {
       "id": 1,
       "label": "1. CSS layout",
       "done": true
@@ -33,6 +38,11 @@
     {
       "id": 7,
       "label": "7. Send PR to RedValley",
+      "done": true
+    },
+    {
+      "id": 8,
+      "label": "8. Fix Errors",
       "done": true
     }
   ]
