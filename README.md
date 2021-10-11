@@ -4,24 +4,21 @@
 * General programing concepts questions (verbal)
 
 ## Code test
-    Implementation of a simple To-Do list as a web application
-    - Tasks *done* are crossed out and are marked in color (`#9eb2c0`) and the check box on the left is marked.
-    - Tasks *to-do* are marked with a color (`#2e3641`) and an unchecked check box on the left. 
-    - A field with the possibility of adding a new task is always displayed under the task list. The new task is always *to-do*.
-    - After adding a new task, it is added above the field for adding a new task. A field with the option of adding a new task is always at the very bottom of the list.
-    - You cannot add a task without entering the title.
-    - Each task can be deleted by clicking on the trash can icon.
-    - You can change order of tasks by moving them with *drag & drop*.
+    Implementation of a simple list and detail as a web application
+    - Upload a character list from https://rickandmortyapi.com using the layout system.
+    - Create a component where you can paginate
+    - A field is needed where you can filter by character name 
+    - Clicking on the character's name should take you to a detail page, where you can view all the character's information
 
-## Applications design:
 
-![Application Layout](https://raw.githubusercontent.com/qunabu/junior-recruitment-task/master/assets/to-do-list.png) 
-
+## System Design
+https://www.figma.com/file/y9u0x0Gy0D1xeIHPu6XyDr/Alpha-Drive-UI-Kit-Demo-File-Community?node-id=1%3A2
 
 ## Frontend, use the following stack:
     - Javascript
         - React
-    - Html/Css (Boostrap)
+        - Redux (Thunks/Saga)
+    - Html/CSS-SAS (Boostrap)
     - Testing (Bonus)
 
 ## Platform:
@@ -30,4 +27,3 @@
 ## To apply for the job you must ...
     - Fork this repository. 
     - Make a PR with the code and the url to your application
-
