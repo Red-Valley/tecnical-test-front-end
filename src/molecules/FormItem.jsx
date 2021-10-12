@@ -1,4 +1,9 @@
-export const FormItem = ({ hideLabel, children, htmlFor, className }) => (
+export const FormItem = ({
+  hideLabel = false,
+  children,
+  htmlFor,
+  className = "",
+}) => (
   <div class={`mb-3 ${className}`}>
     {!hideLabel ? (
       <label htmlFor={htmlFor} className="form-label">
