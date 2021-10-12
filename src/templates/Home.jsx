@@ -1,9 +1,15 @@
 import { Header } from "../organisms/Header";
 import { CardsGrid } from "../organisms/CardsGrid";
+import { useGetCharactersListQuery } from "../features/characters/characters-slice";
 
-export const Home = () => (
-  <div className="container">
-    <Header />
-    <CardsGrid grid={[1, 2, 3, 4, 5, 6, 7, 8]} />
-  </div>
-);
+export const Home = () => {
+  const { data = [], isFetching } = useGetCharactersListQuery();
+
+  return (
+    <div className="container">
+      <Header />
+      {isFetching ? "...Loading" : ""}
+      <CardsGrid grid={data} />
+    </div>
+  );
+};

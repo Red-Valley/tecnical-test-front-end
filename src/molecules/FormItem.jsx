@@ -4,7 +4,7 @@ export const FormItem = ({
   htmlFor,
   className = "",
 }) => (
-  <div class={`mb-3 ${className}`}>
+  <div className={`mb-3 ${className}`}>
     {!hideLabel ? (
       <label htmlFor={htmlFor} className="form-label">
         Default file input example

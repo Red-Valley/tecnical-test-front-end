@@ -11,7 +11,7 @@ export const Header = () => {
         <Link href="/">
           <h1 className="h4">Brand</h1>
         </Link>
-        <div class="d-flex" style={{ marginTop: "1rem" }}>
+        <div className="d-flex" style={{ marginTop: "1rem" }}>
           <Search onSearch={handleSearch} />
         </div>
       </div>
