@@ -1,4 +1,4 @@
-import { Header } from "../molecules/Header";
+import { Header } from "../organisms/Header";
 
 export const Home = () => (
   <div className="container">
