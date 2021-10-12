@@ -2,6 +2,7 @@ export const Button = ({
   type = "primary",
   children,
   id,
+  btnType = "button",
   className = "",
   handleClick,
   isLink = false,
@@ -20,7 +21,7 @@ export const Button = ({
   return (
     <button
       id={id}
-      type="button"
+      type={btnType}
       className={`btn ${types[type]} ${isLink ? "btn-link" : ""} ${className}`}
       onClick={() => handleClick()}
       disabled={isDisabled}
