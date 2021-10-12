@@ -1,8 +1,9 @@
 export const Button = ({
   type = "primary",
   children,
+  id,
+  className = "",
   handleClick,
-  isDark = false,
   isLink = false,
   isDisabled = false,
 }) => {
@@ -13,15 +14,15 @@ export const Button = ({
     error: "btn-danger",
     warning: "btn-warning",
     "outline-secondary": "btn-outline-secondary",
+    light: "btn-light",
   };
 
   return (
     <button
+      id={id}
       type="button"
-      className={`btn ${types[type]} ${isDark ? "btn-dark" : "btn-light"} ${
-        isLink ? "btn-link" : ""
-      }`}
-      onClick={() => handleClick}
+      className={`btn ${types[type]} ${isLink ? "btn-link" : ""} ${className}`}
+      onClick={() => handleClick()}
       disabled={isDisabled}
     >
       {children}
