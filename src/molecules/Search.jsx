@@ -4,11 +4,11 @@ import { FormItem } from "./FormItem";
 import { useInput } from "../hooks/useInput";
 import "../styles/scss/molecules/search.scss";
 
-export const Search = ({ handleSearch }) => {
+export const Search = ({ onSearch }) => {
   const { bind, value, reset } = useInput("");
 
-  const onSearch = () => {
-    handleSearch(value);
+  const handleSearch = () => {
+    onSearch(value);
   };
 
   return (
@@ -20,7 +20,7 @@ export const Search = ({ handleSearch }) => {
             clear
           </Button>
         </div>
-        <Button handleClick={onSearch} type="primary">
+        <Button className="ms-3" handleClick={handleSearch} type="primary">
           Search
         </Button>
       </FormItem>
