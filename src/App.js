@@ -1,2 +1,2 @@
-import { Home } from "./templates/Home";
-export const App = () => <Home />;
+import { Routes } from "./routes";
+export const App = () => <Routes />;
