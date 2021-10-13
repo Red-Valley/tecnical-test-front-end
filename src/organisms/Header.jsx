@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 import { Search } from "../molecules/Search";
 
-export const Header = () => {
-  const handleSearch = (s) => {
-    console.log(s);
-  };
+export const Header = ({ handleSearch }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
