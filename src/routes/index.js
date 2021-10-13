@@ -2,7 +2,7 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import { Home } from "../templates/Home";
 import { ViewCharacter } from "../templates/ViewCharacter";
 
-export const Routes = () => {
+export const App = () => {
   return (
     <Router>
       <Switch>
