@@ -12,18 +12,16 @@ export const Search = ({ onSearch }) => {
   };
 
   return (
-    <div className="mb-3">
-      <FormItem htmlFor="search" hideLabel className="d-flex">
-        <div className="relative">
-          <InputText id="search" placeholder={"Filter by name"} {...bind} />
-          <Button className="clear-btn" handleClick={reset} type="light">
-            clear
-          </Button>
-        </div>
-        <Button className="ms-3" handleClick={handleSearch} type="primary">
-          Search
+    <FormItem htmlFor="search" hideLabel className="d-flex">
+      <div className="relative">
+        <InputText id="search" placeholder={"Filter by name"} {...bind} />
+        <Button className="clear-btn" handleClick={reset} type="light">
+          clear
         </Button>
-      </FormItem>
-    </div>
+      </div>
+      <Button className="ms-3" handleClick={handleSearch} type="primary">
+        Search
+      </Button>
+    </FormItem>
   );
 };

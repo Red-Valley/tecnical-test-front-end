@@ -2,6 +2,7 @@ import { Header } from "../organisms/Header";
 import { CharacterCard } from "../molecules/CharacterCard";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "../styles/scss/templates/view-character.scss";
 
 export const ViewCharacter = () => {
   const { id } = useParams();
@@ -32,7 +33,7 @@ export const ViewCharacter = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container" id="viewCharacter">
       <Header />
       <section className="container" id="main">
         <div
