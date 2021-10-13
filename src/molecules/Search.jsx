@@ -11,11 +11,16 @@ export const Search = ({ onSearch }) => {
     onSearch(value);
   };
 
+  const handleClear = () => {
+    reset();
+    onSearch("");
+  };
+
   return (
     <FormItem htmlFor="search" hideLabel className="d-flex">
       <div className="relative">
         <InputText id="search" placeholder={"Filter by name"} {...bind} />
-        <Button className="clear-btn" handleClick={reset} type="light">
+        <Button className="clear-btn" handleClick={handleClear} type="light">
           clear
         </Button>
       </div>
