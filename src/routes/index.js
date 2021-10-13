@@ -1,5 +1,6 @@
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import { Home } from "../templates/Home";
+import { ViewCharacter } from "../templates/ViewCharacter";
 
 export const Routes = () => {
   return (
@@ -15,12 +16,13 @@ export const Routes = () => {
 
 const _routes = [
   {
-    path: "",
+    path: "/",
     exact: true,
     component: Home,
   },
   {
+    exact: false,
     path: "/character/:id",
-    component: Home,
+    component: ViewCharacter,
   },
 ];

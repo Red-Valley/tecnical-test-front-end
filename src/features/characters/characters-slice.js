@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const charactersApi = createApi({
+  reducerPath: "characters",
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_API }),
   endpoints: (builder) => ({
     getCharactersList: builder.query({

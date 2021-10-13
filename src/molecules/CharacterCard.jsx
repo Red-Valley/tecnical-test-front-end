@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-export const CharacterCard = ({ name, imageSrc, id }) => (
+export const CharacterCard = ({ name, imageSrc, id, showLink = false }) => (
   <div className="card shadow-sm">
     {imageSrc ? (
-      <img src={imageSrc} className="card-img-top" alt="" />
+      <img src={imageSrc} className="img-fluid" alt="" />
     ) : (
       <svg
-        className="bd-placeholder-img card-img-top"
+        className="img-fluid"
         width="100%"
         height="225"
         xmlns="http://www.w3.org/2000/svg"
@@ -25,9 +25,11 @@ export const CharacterCard = ({ name, imageSrc, id }) => (
     <div className="card-body">
       <p className="card-text ms-1">{name}</p>
       <div className="d-flex justify-content-between align-items-center">
-        <Link to={`/character/${id}`} className="btn btn-sm btn-primary">
-          View
-        </Link>
+        {showLink ? (
+          <Link to={`/character/${id}`} className="btn btn-sm btn-primary">
+            View
+          </Link>
+        ) : null}
       </div>
     </div>
   </div>
