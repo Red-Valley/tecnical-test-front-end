@@ -8,7 +8,8 @@ export const ViewCharacter = () => {
   const characters = useSelector(
     (state) => state.characters.queries["getCharactersList(undefined)"].data
   );
-  const character = characters[id];
+
+  const character = characters.find((ch) => ch.id === Number(id));
 
   const {
     name,
