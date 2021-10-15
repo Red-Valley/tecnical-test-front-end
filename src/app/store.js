@@ -11,9 +11,13 @@ import {
   REHYDRATE,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import paginationSlice from "../features/characters/pagination-slice";
+import searchSlice from "../features/characters/search-slice";
 
 const rootReducer = combineReducers({
   [charactersApi.reducerPath]: charactersApi.reducer,
+  pagination: paginationSlice,
+  search: searchSlice,
 });
 
 const persistConfig = {
