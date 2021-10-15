@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { charactersApi } from "../features/characters/characters-slice";
 import { combineReducers } from "redux";
 import {
   FLUSH,
@@ -13,11 +12,12 @@ import {
 import storage from "redux-persist/lib/storage";
 import paginationSlice from "../features/characters/pagination-slice";
 import searchSlice from "../features/characters/search-slice";
+import apiSlice from "../features/characters/api-slice";
 
 const rootReducer = combineReducers({
-  [charactersApi.reducerPath]: charactersApi.reducer,
   pagination: paginationSlice,
   search: searchSlice,
+  api: apiSlice,
 });
 
 const persistConfig = {
@@ -36,5 +36,5 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(charactersApi.middleware),
+    }),
 });
