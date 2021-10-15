@@ -16,6 +16,7 @@ export const Button = ({
     warning: "btn-warning",
     "outline-secondary": "btn-outline-secondary",
     light: "btn-light",
+    none: "",
   };
 
   return (
