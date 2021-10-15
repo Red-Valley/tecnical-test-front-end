@@ -1,13 +1,13 @@
 import { Header } from "../organisms/Header";
 import { CharacterCard } from "../molecules/CharacterCard";
 import { useParams } from "react-router-dom";
-import { useGetCharacterByIdQuery } from "../features/characters/characters-slice";
+import { useSelector } from "react-redux";
+import { selectCharacter } from "../features/characters/api-slice";
 import "../styles/scss/templates/view-character.scss";
-import { CubeGrid } from "../atoms/CubeGrid";
 
 export const ViewCharacter = () => {
   const { id } = useParams();
-  const { data, isFetching } = useGetCharacterByIdQuery(id);
+  const character = useSelector((state) => selectCharacter(state, id));
 
   const {
     name,
@@ -17,7 +17,7 @@ export const ViewCharacter = () => {
     gender,
     status,
     origin: { name: originName },
-  } = data || {
+  } = character || {
     name: "",
     id: "",
     image: "",
@@ -37,12 +37,7 @@ export const ViewCharacter = () => {
           className="d-flex align-items-start justify-content-center gap-4"
           style={{ marginTop: "2rem" }}
         >
-          {isFetching ? (
-            <div className="block">
-              <CubeGrid />
-            </div>
-          ) : null}
-          {data ? (
+          {character ? (
             <>
               <CharacterCard name={name} id={characterId} imageSrc={image} />
               <div>
@@ -60,7 +55,7 @@ export const ViewCharacter = () => {
                 </p>
               </div>
             </>
-          ) : isFetching ? null : (
+          ) : (
             <div>Not found</div>
           )}
         </div>
