@@ -23,14 +23,13 @@ export const CharacterCard = ({ name, imageSrc, id, showLink = false }) => (
       </svg>
     )}
     <div className="card-body">
-      <p className="card-text ms-1">{name}</p>
-      <div className="d-flex justify-content-between align-items-center">
-        {showLink ? (
-          <Link to={`/character/${id}`} className="btn btn-sm btn-primary">
-            View
-          </Link>
-        ) : null}
-      </div>
+      {showLink ? (
+        <Link to={`/character/${id}`} className="card-text ms-1">
+          {name}
+        </Link>
+      ) : (
+        <p className="card-text ms-1">{name}</p>
+      )}
     </div>
   </div>
 );
