@@ -1,0 +1,16 @@
+.page-item {
+  user-select: none;
+}
+
+.active {
+  color: white !important;
+  background: var(--bs-primary) !important;
+  &:hover {
+    background: var(--bs-primary) !important;
+    color: white !important;
+  }
+}
+
+.btn {
+  border-radius: 0 !important;
+}
