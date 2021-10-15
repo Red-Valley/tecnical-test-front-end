@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import "../styles/scss/molecules/character-cards.scss";
 
 export const CharacterCard = ({ name, imageSrc, id, showLink = false }) => (
   <div className="card shadow-sm">
     {imageSrc ? (
-      <img src={imageSrc} className="img-fluid" alt="" />
+      <img src={imageSrc} className="img-fluid card-image" alt="" />
     ) : (
       <svg
         className="img-fluid"
