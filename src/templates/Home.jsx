@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import { Header } from "../organisms/Header";
 import { CardsGrid } from "../organisms/CardsGrid";
 import { CubeGrid } from "../atoms/CubeGrid";
@@ -21,7 +21,9 @@ export const Home = () => {
   const dispatch = useDispatch();
   const { search: filter } = useSelector(selectFilter);
   const isLoading = useSelector(selectLoading);
-  const { currentPage, totalCount } = useSelector((state) => state.pagination);
+  const { currentPage, totalCount = 0 } = useSelector(
+    (state) => state.pagination
+  );
   const count = useSelector(selectDataInfoCount);
 
   // On pagination or filter changes
