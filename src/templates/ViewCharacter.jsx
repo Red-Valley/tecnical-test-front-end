@@ -7,7 +7,7 @@ import "../styles/scss/templates/view-character.scss";
 
 export const ViewCharacter = () => {
   const { id } = useParams();
-  const character = useSelector((state) => selectCharacter(state, id));
+  const character = useSelector((state) => selectCharacter(state, Number(id)));
 
   const {
     name,
