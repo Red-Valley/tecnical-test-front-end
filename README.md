@@ -27,3 +27,6 @@ https://www.figma.com/file/y9u0x0Gy0D1xeIHPu6XyDr/Alpha-Drive-UI-Kit-Demo-File-C
 ## To apply for the job you must ...
     - Fork this repository. 
     - Make a PR with the code and the url to your application
+
+## Deploy App
+https://elated-almeida-53babe.netlify.app/
