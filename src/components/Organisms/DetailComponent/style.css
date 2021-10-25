@@ -1,0 +1,32 @@
+.bgImage_container{
+    animation: motion 2.5s linear infinite;
+}
+
+.detailDescription{
+    font-family: 'PoppinsRegular';
+    font-weight: bold;
+    font-size: 1.2rem ;
+    color: #b3bfb6fa;
+}
+h2{
+    font-family: 'RM';
+    color: #24f727;
+    font-size: 1rem ;
+}
+span{
+    font-family: 'PoppinsRegular';
+    font-size: 1rem ;
+    color: #b3bfb6fa;
+}
+
+@keyframes motion{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(2rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

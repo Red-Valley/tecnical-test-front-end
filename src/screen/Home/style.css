@@ -1,0 +1,10 @@
+.container_value{
+    font-family: 'RM';
+    color:#388839;
+    font-size:4rem;
+}
+.MuiPaginationItem-root{
+    color:#388839!important;
+    margin-bottom: 1rem !important;
+    font-size:4rem; 
+}

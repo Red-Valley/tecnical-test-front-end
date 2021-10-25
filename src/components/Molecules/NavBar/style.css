@@ -1,0 +1,10 @@
+p{
+    font-family: 'RM';
+    color:#24f727;
+    font-size:4rem;
+}
+.form-control {
+    background-color: #41464b !important;
+    color: #24f727 !important;
+    font-family: 'PoppinsRegular';
+}
