@@ -1,0 +1,113 @@
+.sigle__card {
+    margin: 1em;
+    padding: 0;
+    overflow: hidden;
+    width: 27%;
+    height: 400px;
+    cursor: pointer;
+    transition: .3s all ease;
+    text-decoration: none;
+}
+.sigle__card:hover {
+    cursor: pointer;
+    transform: scale(1.07);
+}
+.sigle__card__information {
+    width:100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--color__dark);
+    border-radius: 3px;
+    color: var(--color__yellow);
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+.sigle__card__image {
+    position: relative;
+    border-radius: 5px;
+    transition: .3s all ease;
+}
+.sigle__card__image img:hover {
+    filter: grayscale(100%);
+}
+.single__card__id {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    display: inline;
+    padding: 10px 15px;
+    border-radius: 50%;
+    background-color: var(--color__red);
+    color: var(--color__white);
+    font-weight: var(--text__H2SemiBold);
+}
+.single__card__name {
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color__blackAccent);
+    color: var(--color__white);
+    
+}
+.single__card__name i {
+    color: var(--color__white);
+    background-color: var(--color__orange);
+    padding: 10px;
+}
+.single__card__name p {
+    color: var(--color__white);
+    padding: 5px;
+  
+}
+.single__card__status {
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 40%;
+    padding: 4px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin: 10px;
+    color: var(--color__white);
+    border-radius: 5px;
+    background-color: var( --color__darkGray)
+}
+.live {
+    color: var(--color__green);
+}
+@media (max-width: 900px) {
+    .sigle__card {
+        margin: 1em;
+        padding: 0;
+        overflow: hidden;
+        width: 35%;
+    }
+    .card__main {
+        width: 100%;
+        margin: 4em auto;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .sigle__card {
+        width: 100%;
+        max-width: 300px;
+    }
+    .card__main {
+        width: 100%;
+        margin: 4em auto;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+    
+}

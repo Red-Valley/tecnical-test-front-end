@@ -1,33 +1,21 @@
-# Tecnical test - Front end
+# Test using React Redux/Thunks and best pratices react
 
-## Testing you tecnical skills
-* General programing concepts questions (verbal)
+This project was bootstrapped with [Create React App](https://rickandmortyredux.netlify.app/).
 
-## Code test
-    Implementation of a simple To-Do list as a web application
-    - Tasks *done* are crossed out and are marked in color (`#9eb2c0`) and the check box on the left is marked.
-    - Tasks *to-do* are marked with a color (`#2e3641`) and an unchecked check box on the left. 
-    - A field with the possibility of adding a new task is always displayed under the task list. The new task is always *to-do*.
-    - After adding a new task, it is added above the field for adding a new task. A field with the option of adding a new task is always at the very bottom of the list.
-    - You cannot add a task without entering the title.
-    - Each task can be deleted by clicking on the trash can icon.
-    - You can change order of tasks by moving them with *drag & drop*.
+## Available Scripts
 
-## Applications design:
+In the project directory, you can run:
 
-![Application Layout](https://raw.githubusercontent.com/qunabu/junior-recruitment-task/master/assets/to-do-list.png) 
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Frontend, use the following stack:
-    - Javascript
-        - React
-    - Html/Css (Boostrap)
-    - Testing (Bonus)
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Platform:
-    - Deploy your app to any free platform such as Netlify, Vercel, etc.
+### `npm test`
 
-## To apply for the job you must ...
-    - Fork this repository. 
-    - Make a PR with the code and the url to your application
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
