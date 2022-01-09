@@ -27,8 +27,11 @@ const SearchBar = () => {
   }, [search]);
 
   return (
-    <div className="flex flex-col md:flex-row ">
-      <form onSubmit={handleSearch}>
+    <div className="flex flex-col md:flex-row justify-center">
+      <form
+        onSubmit={handleSearch}
+        className="form-control mx-auto mb-2 md:mb-5 "
+      >
         <input
           type="text"
           className="form-control"

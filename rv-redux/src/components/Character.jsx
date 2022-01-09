@@ -8,7 +8,6 @@ export const Character = () => {
 
   return (
     <>
-      <SearchBar />
       {characters.results?.map(
         ({ id, name, image, species, status, gender, origin }) => (
           <div
