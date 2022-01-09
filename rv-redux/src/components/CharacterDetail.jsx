@@ -3,22 +3,20 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Loading } from "./Loading";
 import { useDispatch, useSelector } from "react-redux";
-import { selectedProduct } from "../redux/actions/characterActions";
+import { selectedCharacter } from "../redux/actions/characterActions";
 
 const CharacterDetail = () => {
   const { id } = useParams();
 
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.selectedProduct);
+  const character = useSelector((state) => state.selectedCharacter);
   // fetch the product
   const fetchProduct = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(
-        `https://fakestoreapi.com/products/${id}`
-      );
-      dispatch(selectedProduct(data));
+      const { data } = await axios.get(`${id}`);
+      dispatch(selectedCharacter(data));
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -29,7 +27,7 @@ const CharacterDetail = () => {
   useEffect(() => {
     if (id && id !== "") fetchProduct();
   }, [id]);
-  const { title, category, description, price, image } = product;
+  const { title, category, description, price, image } = character;
   return (
     <div className="container mx-auto">
       {loading ? (

@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { Product } from "./Character";
+import { useDispatch } from "react-redux";
+import { Character } from "./Character";
 import axios from "axios";
 import { useEffect, useState } from "react";
 // Action types
-import { setProducts } from "../redux/actions/characterActions";
+import { setCharacters } from "../redux/actions/characterActions";
 import { Loading } from "./Loading";
 
 const CharacterList = () => {
@@ -16,8 +16,8 @@ const CharacterList = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("https://fakestoreapi.com/products");
-        dispatch(setProducts(response.data));
+        const response = await axios.get();
+        dispatch(setCharacters(response.data));
         setLoading(false);
       } catch (error) {
         setLoading(false);
@@ -33,7 +33,7 @@ const CharacterList = () => {
         <Loading />
       ) : (
         <div className="grid sm:grid-cols-2  lg:grid-cols-3 gap-4">
-          <Product />
+          <Character />
         </div>
       )}
     </div>
