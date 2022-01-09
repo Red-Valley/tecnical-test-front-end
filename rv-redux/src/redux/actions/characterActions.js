@@ -13,3 +13,9 @@ export const selectedCharacter = (character) => {
     payload: character,
   };
 };
+export const searchCharacters = (characters) => {
+  return {
+    type: ActionTypes.SEARCH_CHARACTERS,
+    payload: characters,
+  };
+};

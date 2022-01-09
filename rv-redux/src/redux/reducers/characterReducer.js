@@ -30,3 +30,18 @@ export const selectedCharacterReducer = (
       return state;
   }
 };
+
+export const searchCharactersReducer = (
+  state = initialState,
+  { type, payload }
+) => {
+  switch (type) {
+    case ActionTypes.SEARCH_CHARACTERS:
+      return {
+        ...state,
+        characters: payload,
+      };
+    default:
+      return state;
+  }
+};

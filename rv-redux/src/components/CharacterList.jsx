@@ -11,20 +11,20 @@ const CharacterList = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   //   fetch products
+  const fetchCharacters = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get();
+      dispatch(setCharacters(response.data));
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get();
-        dispatch(setCharacters(response.data));
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-        console.log(error);
-      }
-    };
-    fetchProducts();
+    fetchCharacters();
   }, []);
 
   return (
@@ -32,7 +32,7 @@ const CharacterList = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="grid sm:grid-cols-2  lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           <Character />
         </div>
       )}
