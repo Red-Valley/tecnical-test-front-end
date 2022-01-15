@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { SearchCharacter } from "../components/SearchCharacter";
 import { getCharacters } from "../features/characters/charactersSlice";
 import { Character } from "./Character";
 
@@ -8,7 +9,7 @@ export const CharacterList = () => {
   console.log(isLoading);
   // Function to render characters
   const renderCharacters = () => {
-    return characters.map((character, index) => {
+    return characters?.map((character, index) => {
       return <Character key={index} character={character} />;
     });
   };
@@ -27,7 +28,12 @@ export const CharacterList = () => {
             </div>
           </div>
         ) : (
-          <div className="row ">{renderCharacters()}</div>
+          <>
+            <div className="w-50 mx-auto my-2 flex">
+              <SearchCharacter />
+            </div>
+            <div className="row ">{renderCharacters()}</div>
+          </>
         )
       }
     </div>

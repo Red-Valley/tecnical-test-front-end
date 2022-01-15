@@ -25,6 +25,18 @@ export const fetchAsyncCharacterById = createAsyncThunk(
     }
   }
 );
+// Fetch character by name
+export const fetchAsyncCharacterByName = createAsyncThunk(
+  "characters/fetchAsyncCharacterByName",
+  async (name) => {
+    try {
+      const { data } = await api.get("/?name=" + name);
+      return data.results;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 const initialState = {
   characters: [],
@@ -61,6 +73,17 @@ const characterSlice = createSlice({
       state.loading = false;
     },
     [fetchAsyncCharacterById.rejected]: (state, action) => {
+      state.error = action.error.message;
+      state.loading = false;
+    },
+    [fetchAsyncCharacterByName.pending]: (state, action) => {
+      state.loading = true;
+    },
+    [fetchAsyncCharacterByName.fulfilled]: (state, action) => {
+      state.characters = action.payload;
+      state.loading = false;
+    },
+    [fetchAsyncCharacterByName.rejected]: (state, action) => {
       state.error = action.error.message;
       state.loading = false;
     },

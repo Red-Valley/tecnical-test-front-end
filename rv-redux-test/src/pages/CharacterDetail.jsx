@@ -33,7 +33,7 @@ export const CharacterDetail = () => {
           >
             <div className="row">
               <div className="col-4">
-                <img src={image} className="card-img-top" alt={name} />
+                <img src={image} className="card-img-top h-100" alt={name} />
               </div>
               <div className="col-8">
                 <div className="card-body">
@@ -55,14 +55,20 @@ export const CharacterDetail = () => {
                       </span>
                     </p>
                   </div>
+                  <p className="card-text me-5">
+                    Origin:{" "}
+                    <span className="badge bg-warning fw-bold h4">
+                      {origin?.name}
+                    </span>
+                  </p>
                   <p className="card-text">
                     Last Location:{" "}
                     <span className="badge bg-warning fw-bold h4">
-                      {location.name}
+                      {location?.name}
                     </span>
                   </p>
-                  <Link to={/character/ + id} className="btn btn-primary">
-                    See info...
+                  <Link to="/" className="btn btn-primary">
+                    Back
                   </Link>
                 </div>
               </div>
