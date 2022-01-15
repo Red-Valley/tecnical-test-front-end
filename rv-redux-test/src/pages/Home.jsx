@@ -1,26 +1,17 @@
 import { useEffect } from "react";
 import { CharacterList } from "./CharacterList";
-import api from "../common/API/charactersApi";
 import { useDispatch } from "react-redux";
-import { addCharacters } from "../features/characters/charactersSlice";
+import { fetchAsyncCharacters } from "../features/characters/charactersSlice";
 
 export const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    const fetchCharacters = async () => {
-      try {
-        const { data } = await api.get();
-        dispatch(addCharacters(data.results));
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchCharacters();
-  }, []);
+    dispatch(fetchAsyncCharacters());
+  }, [dispatch]);
 
   return (
-    <div>
-      <h1 className="text-center">Character List</h1>
+    <div className="mt-5">
+      <h1 className="text-center mt-2 mb-2">Character List</h1>
       <CharacterList />
     </div>
   );

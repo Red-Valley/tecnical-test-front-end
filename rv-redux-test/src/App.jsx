@@ -15,8 +15,8 @@ function App() {
           <Route path="/character/:id" component={CharacterDetail} />
           <Route component={NotFound} />
         </Switch>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   );
 }

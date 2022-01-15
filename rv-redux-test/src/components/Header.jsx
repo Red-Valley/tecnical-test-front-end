@@ -29,8 +29,12 @@ export const Header = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                Link <FaUserAlt />
+              <a
+                className="p-2 logButton rounded-circle nav-link btn btn-primary text-white"
+                href="/"
+                role="button"
+              >
+                <FaUserAlt />
               </a>
             </li>
           </ul>
