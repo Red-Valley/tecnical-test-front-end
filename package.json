@@ -1,0 +1,43 @@
+{
+  "name": "tecnical-test-front-end",
+  "version": "1.0.0",
+  "description": "* General programing concepts questions (verbal)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samumirandam/tecnical-test-front-end.git"
+  },
+  "keywords": [],
+  "author": "samumirandam <samuelchampi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samumirandam/tecnical-test-front-end/issues"
+  },
+  "homepage": "https://github.com/samumirandam/tecnical-test-front-end#readme",
+  "dependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "sass": "^1.45.2",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1"
+  }
+}
