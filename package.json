@@ -4,9 +4,10 @@
   "description": "* General programing concepts questions (verbal)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -36,10 +37,28 @@
     "webpack-dev-server": "^4.6.0"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "css-loader": "^6.5.1",
+    "enzyme": "^3.11.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.7",
     "mini-css-extract-plugin": "^2.4.5",
+    "redux-mock-store": "^1.5.4",
+    "redux-thunk": "^2.4.1",
     "sass": "^1.45.2",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "setupFilesAfterEnv": [
+      "./src/setupTest.js"
+    ],
+    "testEnvironment": "jsdom",
+    "collectCoverage": true
   }
 }
