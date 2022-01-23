@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import { setDarkModeAction } from "../../actions";
+import { setDarkModeAction, getCharacterListAction } from "../../actions";
 
 import "./Home.scss";
 
-const Home = ({ darkMode, setDarkMode }) => {
+const Home = ({ darkMode, setDarkMode, getCharacterList }) => {
   useEffect(() => {
     setDarkMode(false);
+    getCharacterList(true);
   }, []);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   setDarkMode: (payload) => setDarkModeAction(payload),
+  getCharacterList: (payload) => getCharacterListAction(payload),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

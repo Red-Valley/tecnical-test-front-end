@@ -22,8 +22,10 @@
   "homepage": "https://github.com/samumirandam/tecnical-test-front-end#readme",
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.10",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "axios": "^0.25.0",
     "babel-loader": "^8.2.3",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
