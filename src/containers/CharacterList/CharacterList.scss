@@ -1,0 +1,9 @@
+@use "../../styles/vars";
+
+.CharacterList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  gap: var(--lg);
+  // place-content: center;
+  place-content: space-between;
+}
