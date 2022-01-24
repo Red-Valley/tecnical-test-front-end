@@ -1,0 +1,12 @@
+@use "../../styles/vars";
+
+.Pagination {
+  align-self: center;
+  margin-bottom: var(--md);
+  display: flex;
+  align-items: center;
+
+  &__actual-page {
+    margin: 0 var(--sm);
+  }
+}

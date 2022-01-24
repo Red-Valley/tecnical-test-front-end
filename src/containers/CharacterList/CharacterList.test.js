@@ -18,6 +18,7 @@ const initialState = {
     data: null,
     errorDetail: null,
   },
+  getCharacterList: jest.fn(),
 };
 
 const setup = (props = {}) => {
@@ -61,6 +62,40 @@ describe("Test for CharacterList container", () => {
     const wrapper = setup(props);
     expect(wrapper.exists()).toBe(true);
     const container = wrapper.find(".CharacterCard").at(0);
-    expect(container.key()).toEqual("123")
+    expect(container.key()).toEqual("123");
+  });
+
+  test("Render with data and pages", () => {
+    const props = {
+      ...initialState,
+      characterList: {
+        ...initialState.characterList,
+        isSucces: true,
+        data: {
+          results: [
+            {
+              id: 123,
+              key: 123,
+              name: "test",
+            },
+          ],
+          info: {
+            count: 826,
+            pages: 42,
+            next: "https://rickandmortyapi.com/api/character/?page=3",
+            prev: "https://rickandmortyapi.com/api/character/?page=1",
+          },
+        },
+      },
+    };
+    const wrapper = setup(props);
+    expect(wrapper.exists()).toBe(true);
+    const buttonLeft = wrapper.find(".ButtonIcon.alignRevert").at(0);
+    const buttonRigth = wrapper.find(".ButtonIcon").at(1);
+
+    buttonLeft.simulate("click");
+    buttonRigth.simulate("click");
+
+    // expect(initialState.getCharacterList).toBeCalled();
   });
 });

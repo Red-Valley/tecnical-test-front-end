@@ -1,0 +1,29 @@
+@use "../../styles/vars";
+
+.ButtonIcon {
+  display: flex;
+  align-items: center;
+  padding: var(--xs);
+  border-radius: 8px;
+  background-color: var(--primary-pulple);
+  border: none;
+  color: var(--text-color-white);
+
+  &.alignRevert {
+    flex-direction: row-reverse;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: var(--text-color-line-dark);
+    color: var(--text-color-grey);
+    cursor: not-allowed;
+  }
+
+  span {
+    margin: 0 var(--xs);
+  }
+}
