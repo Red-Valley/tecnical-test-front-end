@@ -8,7 +8,7 @@ export const apiRequest = async (dispatch, steps, api) => {
   } catch (error) {
     dispatch(
       steps.error(
-        `Algo salio mal, por favor intetalo más tarde. Detalle: ${error.message}`
+        `Detalle: ${error.message}`
       )
     );
   }

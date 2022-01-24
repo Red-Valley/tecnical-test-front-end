@@ -5,10 +5,19 @@ import { getCharacterListAction } from "../../actions";
 
 import CharacterCard from "../../components/CharacterCard";
 import Pagination from "../../components/Pagination";
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
 
 import "./CharacterList.scss";
 
-const CharacterList = ({ characterList, getCharacterList, isSucces }) => {
+const CharacterList = ({
+  characterList,
+  getCharacterList,
+  isSucces,
+  isLoading,
+  isError,
+  errorDetail,
+}) => {
   const [actualPage, setActualPage] = useState(1);
 
   const handleNextPage = () => {
@@ -67,6 +76,8 @@ const CharacterList = ({ characterList, getCharacterList, isSucces }) => {
           prev={handlePrevPage}
         />
       )}
+      {isLoading && <Loader />}
+      {isError && <Error error={errorDetail} />}
     </div>
   );
 };
@@ -75,6 +86,9 @@ const mapStateToProps = (state) => {
   return {
     characterList: state.characterList.data,
     isSucces: state.characterList.isSucces,
+    isLoading: state.characterList.isLoading,
+    isError: state.characterList.isError,
+    errorDetail: state.characterList.errorDetail,
   };
 };
 
