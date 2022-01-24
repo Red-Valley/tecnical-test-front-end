@@ -1,9 +1,15 @@
 @use "../../styles/vars";
 
 .CharacterList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  gap: var(--lg);
-  // place-content: center;
-  place-content: space-between;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: var(--md);
+    // place-content: center;
+    place-content: space-between;
+    margin-bottom: var(--md);
+  }
 }
