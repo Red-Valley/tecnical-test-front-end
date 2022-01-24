@@ -7,7 +7,7 @@ import "./Home.scss";
 const Home = () => {
   return (
     <section className="Home">
-      <div className="big-title">Rick and Morty characters</div>
+      <div className="big-title">Rick and Morty Characters</div>
       <CharacterList />
     </section>
   );
