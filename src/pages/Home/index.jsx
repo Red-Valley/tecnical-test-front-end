@@ -1,36 +1,16 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React from "react";
 
-import { setDarkModeAction, getCharacterListAction } from "../../actions";
+import CharacterList from "../../containers/CharacterList";
 
 import "./Home.scss";
 
-const Home = ({ darkMode, setDarkMode, getCharacterList }) => {
-  useEffect(() => {
-    setDarkMode(false);
-    getCharacterList(true);
-  }, []);
-
-  useEffect(() => {
-    console.log("darkMode", darkMode);
-  }, [darkMode]);
-
+const Home = () => {
   return (
     <section className="Home">
-      <h1>tecnical-test-front-end</h1>
+      <div className="big-title">Rick and Morty characters</div>
+      <CharacterList />
     </section>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    darkMode: state.darkMode,
-  };
-};
-
-const mapDispatchToProps = {
-  setDarkMode: (payload) => setDarkModeAction(payload),
-  getCharacterList: (payload) => getCharacterListAction(payload),
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

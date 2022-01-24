@@ -8,7 +8,7 @@ import { MemoryRouter } from "react-router-dom";
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
-import Home from "./index";
+import CharacterList from "./index";
 
 const initialState = {
   characterList: {
@@ -21,9 +21,6 @@ const initialState = {
 };
 
 const setup = (props = {}) => {
-  // const body = global.document.querySelector("body");
-  // body.appendChild(global.document.createElement("div"));
-
   const setupStore = { ...initialState, ...props };
   const store = mockStore(setupStore);
 
@@ -32,15 +29,38 @@ const setup = (props = {}) => {
   return mount(
     <Provider store={store}>
       <MemoryRouter>
-        <Home {...setupStore} />
+        <CharacterList {...setupStore} />
       </MemoryRouter>
     </Provider>
   );
 };
 
-describe("Test for Home page", () => {
+describe("Test for CharacterList container", () => {
   test("Render without error", () => {
     const wrapper = setup();
     expect(wrapper.exists()).toBe(true);
+  });
+
+  test("Render with data", () => {
+    const props = {
+      ...initialState,
+      characterList: {
+        ...initialState.characterList,
+        isSucces: true,
+        data: {
+          results: [
+            {
+              id: 123,
+              key: 123,
+              name: "test",
+            },
+          ],
+        },
+      },
+    };
+    const wrapper = setup(props);
+    expect(wrapper.exists()).toBe(true);
+    const container = wrapper.find(".CharacterCard").at(0);
+    expect(container.key()).toEqual("123")
   });
 });

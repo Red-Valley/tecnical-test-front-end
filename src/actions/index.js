@@ -1,4 +1,5 @@
-import axios from "axios";
+
+import { apiRequest } from "../utils/apiRequest";
 
 import {
   SET_DARK_MODE,
@@ -12,23 +13,20 @@ export const setDarkModeAction = (payload) => ({
   payload,
 });
 
-export const getCharacterListAction = (payload) => async (dispatch) => {
-  dispatch({
+export const getCharacterListSteps = {
+  request: () => ({
     type: GET_CHARACTER_LIST_LOADING,
-  });
+  }),
+  success: (payload) => ({
+    type: GET_CHARACTER_LIST_SUCCESS,
+    payload: payload.data,
+  }),
+  error: (error) => ({
+    type: GET_CHARACTER_LIST_ERROR,
+    payload: error,
+  }),
+};
 
-  try {
-    const API = "https://rickandmortyapi.com/api/character";
-    const response = await axios.get(API);
-
-    dispatch({
-      type: GET_CHARACTER_LIST_SUCCESS,
-      payload: response.data,
-    });
-  } catch (error) {
-    dispatch({
-      type: GET_CHARACTER_LIST_ERROR,
-      payload: `Algo salio mal con los comentarios, por favor inteta más tarde. Detalle: ${error.message}`,
-    });
-  }
+export const getCharacterListAction = (payload) => (dispatch) => {
+  apiRequest(dispatch, getCharacterListSteps, payload.api);
 };
