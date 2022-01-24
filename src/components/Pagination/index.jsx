@@ -16,7 +16,7 @@ const Pagination = ({ actualPage, disableNext, next, disablePrev, prev }) => {
         disable={disablePrev}
         onClick={prev}
       />
-      <p className="Pagination__actual-page">Pagina actual: {actualPage}</p>
+      <p className="Pagination__actual-page">Página actual: {actualPage}</p>
       <ButtonIcon
         Icon={MdChevronRight}
         alignIcon="right"

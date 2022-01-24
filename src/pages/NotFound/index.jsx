@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+
+import "./NotFound.scss";
 
 const NotFound = () => {
   return (
-    <section>
-      No encontrado, error 404.
+    <section className="NotFound">
+      <p className="semi-title">Ha ocurrido error temporal</p>
+      <p className="regular">Por favor ingresa a una nueva linea temporal</p>
     </section>
   );
-}
+};
 
 export default NotFound;

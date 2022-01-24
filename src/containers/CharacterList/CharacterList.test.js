@@ -98,4 +98,32 @@ describe("Test for CharacterList container", () => {
 
     // expect(initialState.getCharacterList).toBeCalled();
   });
+
+  
+  test("Render loading without error ", () => {
+    const props = {
+      ...initialState,
+      characterList: {
+        ...initialState.characterList,
+        isLoading: true,
+      },
+    };
+    const wrapper = setup(props);
+    expect(wrapper.exists()).toBe(true);
+    const container = wrapper.find(".Loader").at(0);
+    expect(container.exists()).toBe(true);
+  });
+  test("Render error without error ", () => {
+    const props = {
+      ...initialState,
+      characterList: {
+        ...initialState.characterList,
+        isError: true,
+      },
+    };
+    const wrapper = setup(props);
+    expect(wrapper.exists()).toBe(true);
+    const container = wrapper.find(".Error").at(0);
+    expect(container.exists()).toBe(true);
+  });
 });
