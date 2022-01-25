@@ -17,6 +17,7 @@ const CharacterList = ({
   isLoading,
   isError,
   errorDetail,
+  searchValue,
 }) => {
   const [actualPage, setActualPage] = useState(1);
 
@@ -37,11 +38,16 @@ const CharacterList = ({
   };
 
   useEffect(() => {
+    let searchValueTemp = "";
+    if (searchValue) {
+      setActualPage(1);
+      searchValueTemp = searchValue.trim().replace(" ", "%20");
+    }
     const payload = {
-      api: `https://rickandmortyapi.com/api/character/?page=${actualPage}`,
+      api: `https://rickandmortyapi.com/api/character/?page=${actualPage}&name=${searchValueTemp}`,
     };
     getCharacterList(payload);
-  }, []);
+  }, [searchValue]);
 
   return (
     <div className="CharacterList">
