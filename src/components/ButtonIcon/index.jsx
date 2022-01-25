@@ -2,11 +2,13 @@ import React from "react";
 
 import "./ButtonIcon.scss";
 
-const ButtonIcon = ({ Icon, alignIcon, text, disable, onClick }) => {
-  const className = `ButtonIcon ${alignIcon == "left" ? "alignRevert" : ""} `;
+const ButtonIcon = ({ Icon, alignIcon, text, disable, onClick, className }) => {
+  const CompositionClassName = `ButtonIcon ${
+    alignIcon == "left" ? "alignRevert" : ""
+  } ${className}`;
   return (
     <button
-      className={className}
+      className={CompositionClassName}
       type="button"
       disabled={disable}
       onClick={onClick}
