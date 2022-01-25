@@ -18,7 +18,7 @@ const initialState = {
     data: null,
     errorDetail: null,
   },
-  getCharacterList: jest.fn(),
+  // getCharacterList: jest.fn(),
 };
 
 const setup = (props = {}) => {
@@ -99,7 +99,6 @@ describe("Test for CharacterList container", () => {
     // expect(initialState.getCharacterList).toBeCalled();
   });
 
-  
   test("Render loading without error ", () => {
     const props = {
       ...initialState,
@@ -125,5 +124,13 @@ describe("Test for CharacterList container", () => {
     expect(wrapper.exists()).toBe(true);
     const container = wrapper.find(".Error").at(0);
     expect(container.exists()).toBe(true);
+  });
+
+  test("Render with searchValue", () => {
+    const props = {
+      searchValue: "test test",
+    };
+    const wrapper = setup(props);
+    expect(wrapper.exists()).toBe(true);
   });
 });

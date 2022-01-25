@@ -1,0 +1,16 @@
+@use "../../styles/vars";
+
+.SearchInput {
+  margin-bottom: var(--lg);
+
+  &__input {
+    padding: var(--xs);
+    border: 2px solid var(--text-color-line-dark);
+    border-radius: 8px;
+    width: 100%;
+
+    &:focus-visible {
+      outline-color: var(--primary-pulple);
+    }
+  }
+}
