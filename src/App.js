@@ -1,31 +1,44 @@
 import React from 'react';
-import BuscadorTodo from './components/BuscadorTodo';
-import ContadorTodo from './components/ContadorTodo';
-import ListaTodo from './components/ListaTodo';
-import ItemTodo from './components/ItemTodo';
-import CrearTodo from './components/CrearTodo';
+import { BuscadorTodo } from './components/Buscador/BuscadorTodo';
+import { ContadorTodo } from './components/Contador/ContadorTodo';
+import { ListaTodo } from './components/Lista/ListaTodo';
+import { ItemTodo } from './components/Lista/ItemTodo';
+import { CrearTodo } from './components/Crear/CrearTodo';
+import { Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const lista = [
-  {text: 'Task 1', completed:false},
-  {text: 'Task 2', completed:false},
-  {text: 'Task 3', completed:false},
+const listaData = [
+  {id: 1, text: 'Task 1: Realizar To-do', completed:false},
+  {id: 2, text: 'Task 2: Testear To-do', completed:false},
+  {id: 3, text: 'Task 3; enviar To-do', completed:false},
 ];
 
 
 function App() {
   return (
     <React.Fragment>
-      <BuscadorTodo/>
-      <ContadorTodo/>
-      <ListaTodo>
-        {lista.map( todo=> (
-          <ItemTodo/>
-        ))}
-      </ListaTodo>
-      <button>+</button>
-      <CrearTodo/>
+      <Container>
+        <Row>
+          <Col>
+            <BuscadorTodo/>
+              <Button>+</Button>
+            <CrearTodo/>
+            <ContadorTodo/>
+          </Col>
+          <Col>
+            <ListaTodo>
+              {listaData.map( data=> (
+                <ItemTodo key={data.id} text={data.text}/>
+              ))}
+            </ListaTodo>
+          </Col>
+        </Row>
+      </Container>
     </React.Fragment>
   );
 }
