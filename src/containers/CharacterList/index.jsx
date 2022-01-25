@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { getCharacterListAction } from "../../actions";
 
@@ -19,7 +20,12 @@ const CharacterList = ({
   errorDetail,
   searchValue,
 }) => {
+  let navigate = useNavigate();
   const [actualPage, setActualPage] = useState(1);
+
+  const handleGoCharacter = (id) => {
+    navigate(`/character/${id}`);
+  };
 
   const handleNextPage = () => {
     const payload = {
@@ -69,6 +75,9 @@ const CharacterList = ({
                 status={character.status}
                 species={character.species}
                 image={character.image}
+                goToCharacter={() => {
+                  handleGoCharacter(character.id);
+                }}
               />
             );
           })}

@@ -133,4 +133,27 @@ describe("Test for CharacterList container", () => {
     const wrapper = setup(props);
     expect(wrapper.exists()).toBe(true);
   });
+
+  test("Render with data and click in character", () => {
+    const props = {
+      ...initialState,
+      characterList: {
+        ...initialState.characterList,
+        isSucces: true,
+        data: {
+          results: [
+            {
+              id: 123,
+              key: 123,
+              name: "test",
+            },
+          ],
+        },
+      },
+    };
+    const wrapper = setup(props);
+    const container = wrapper.find(".CharacterCard").at(0);
+    container.simulate("click");
+    expect(wrapper.exists()).toBe(true);
+  });
 });

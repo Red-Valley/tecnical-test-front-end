@@ -1,0 +1,10 @@
+@use "../../styles/vars";
+
+.Character {
+  display: flex;
+  flex-direction: column;
+  &__button {
+    margin-bottom: var(--lg);
+    max-width: 375px;
+  }
+}

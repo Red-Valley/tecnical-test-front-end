@@ -1,0 +1,27 @@
+@use "../../styles/vars";
+
+.CharacterDetail {
+  display: grid;
+  grid-template-columns: auto 1f auto;
+  place-content: center;
+
+  .CharacterDetail__figure {
+    padding: var(--md);
+    border: 2px solid var(--text-color-line-dark);
+    border-radius: 16px;
+    margin-bottom: var(--lg);
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+    }
+  }
+
+  .CharacterDetail__table {
+    tr {
+      td:nth-child(even) {
+        text-align: end;
+      }
+    }
+  }
+}

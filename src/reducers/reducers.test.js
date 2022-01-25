@@ -5,11 +5,21 @@ import {
   GET_CHARACTER_LIST_LOADING,
   GET_CHARACTER_LIST_SUCCESS,
   GET_CHARACTER_LIST_ERROR,
+  GET_CHARACTER_LOADING,
+  GET_CHARACTER_SUCCESS,
+  GET_CHARACTER_ERROR,
 } from "../types";
 
 const initialState = {
   darkMode: true,
   characterList: {
+    isLoading: false,
+    isSucces: false,
+    isError: false,
+    data: null,
+    errorDetail: null,
+  },
+  character: {
     isLoading: false,
     isSucces: false,
     isError: false,
@@ -87,6 +97,65 @@ describe("Test for Reducers", () => {
       ...initialState,
 
       characterList: {
+        isLoading: false,
+        isSucces: false,
+        isError: true,
+        data: null,
+        errorDetail: {},
+      },
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
+
+  test("Should get character loading", () => {
+    const payload = {};
+    const action = {
+      type: GET_CHARACTER_LOADING,
+      payload,
+    };
+    const expected = {
+      ...initialState,
+      character: {
+        isLoading: true,
+        isSucces: false,
+        isError: false,
+        data: null,
+        errorDetail: null,
+      },
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
+
+  test("Should get character success", () => {
+    const payload = {};
+    const action = {
+      type: GET_CHARACTER_SUCCESS,
+      payload,
+    };
+    const expected = {
+      ...initialState,
+
+      character: {
+        isLoading: false,
+        isSucces: true,
+        isError: false,
+        data: {},
+        errorDetail: null,
+      },
+    };
+    expect(reducer(initialState, action)).toEqual(expected);
+  });
+
+  test("Should get character error", () => {
+    const payload = {};
+    const action = {
+      type: GET_CHARACTER_ERROR,
+      payload,
+    };
+    const expected = {
+      ...initialState,
+
+      character: {
         isLoading: false,
         isSucces: false,
         isError: true,
