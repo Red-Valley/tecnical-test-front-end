@@ -1,4 +1,10 @@
-import logo from './logo.svg';
+import React from 'react';
+import BuscadorTodo from './components/BuscadorTodo';
+import ContadorTodo from './components/ContadorTodo';
+import ListaTodo from './components/ListaTodo';
+import ItemTodo from './components/ItemTodo';
+import CrearTodo from './components/CrearTodo';
+
 import './App.css';
 
 const lista = [
@@ -10,7 +16,7 @@ const lista = [
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <BuscadorTodo/>
       <ContadorTodo/>
       <ListaTodo>
@@ -20,7 +26,7 @@ function App() {
       </ListaTodo>
       <button>+</button>
       <CrearTodo/>
-    </div>
+    </React.Fragment>
   );
 }
 
