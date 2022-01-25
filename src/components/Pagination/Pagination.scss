@@ -7,6 +7,15 @@
   align-items: center;
 
   &__actual-page {
+    text-align: center;
     margin: 0 var(--sm);
+  }
+}
+
+@media (max-width: 375px) {
+  .Pagination {
+    &__actual-page {
+      display: none;
+    }
   }
 }

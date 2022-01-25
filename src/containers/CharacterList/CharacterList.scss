@@ -13,3 +13,11 @@
     margin-bottom: var(--md);
   }
 }
+
+@media (max-width: 768px) {
+  .CharacterList {
+    &__container {
+      place-content: center;
+    }
+  }
+}

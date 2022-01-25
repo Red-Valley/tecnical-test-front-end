@@ -55,3 +55,11 @@
     color: var(--text-color-black);
   }
 }
+
+@media (max-width: 375px) {
+  .Layout {
+    .big-title {
+      font-size: 3.5rem;
+    }
+  }
+}
