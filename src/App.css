@@ -27,6 +27,28 @@
 .App-link {
   color: #61dafb;
 }
+#root{
+  width: 100%;
+  height: fit-content;
+}
+.Contain{
+  margin: 10%;
+}
+.fila{
+  margin: 5%;
+}
+.ColumnaIzquierda{
+  margin: 10%;
+  background-color: #282c34;
+  color: aliceblue;
+  font-size: x-large;
+}
+.ColumnaDerecha{
+  margin: 5%;
+}
+h1{
+  text-align: center;
+}
 
 @keyframes App-logo-spin {
   from {

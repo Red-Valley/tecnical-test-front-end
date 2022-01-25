@@ -21,21 +21,24 @@ const listaData = [
 
 function App() {
   return (
-    <React.Fragment>
-      <Container>
-        <Row>
-          <Col>
+    <React.Fragment >
+      <Container className='Contain'>
+        <Row className='fila'>
+          <h1>TO-DO LIST</h1>    
+        </Row>
+        <Row  className='fila'>
+          <Col  className='ColumnaIzquierda'>
             <BuscadorTodo/>
-              <Button>+</Button>
             <CrearTodo/>
             <ContadorTodo/>
           </Col>
-          <Col>
+          <Col className='ColumnaDerecha'>
             <ListaTodo>
               {listaData.map( data=> (
                 <ItemTodo key={data.id} text={data.text}/>
               ))}
             </ListaTodo>
+            <Button>+</Button>
           </Col>
         </Row>
       </Container>
