@@ -8,9 +8,16 @@
     border: 2px solid var(--text-color-line-dark);
     border-radius: 8px;
     width: 100%;
+    padding-left: 36px;
 
     &:focus-visible {
       outline-color: var(--primary-pulple);
     }
+  }
+
+  &__icon {
+    position: absolute;
+    margin-top: 9px;
+    margin-left: 6px;
   }
 }

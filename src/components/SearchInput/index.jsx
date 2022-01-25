@@ -1,6 +1,6 @@
 import React from "react";
 
-// import { MdSearch } from "react-icons/md";
+import { MdSearch } from "react-icons/md";
 
 import "./SearchInput.scss";
 
@@ -11,11 +11,11 @@ const SearchInput = ({ searchValue, setSearchValue }) => {
 
   return (
     <div className="SearchInput">
-      {/* <MdSearch size="32px" /> */}
+      <MdSearch size="32px" className="SearchInput__icon" />
       <input
         className="SearchInput__input"
         type="text"
-        placeholder="🔎 Busca a tu personaje favorito"
+        placeholder="Busca a tu personaje favorito"
         value={searchValue}
         onChange={handleOnSearchValueChange}
       />
