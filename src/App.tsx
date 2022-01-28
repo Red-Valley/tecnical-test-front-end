@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Heading } from '@chakra-ui/react';
+import * as React from 'react';
+import { useGetCharacterListQuery } from 'services/rickAndMortyService';
 
 function App() {
+  const [page, setPage] = React.useState(1)
+  const { data, error, isLoading } = useGetCharacterListQuery(page);
+
+
+  console.log('isLoading', isLoading);
+  if(isLoading) return <p>cargndo...</p>
+
+  if(error) return <p>algo malo paso</p>
+
+  console.log('data', data);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hola mundo</h1>
+      {data?.results?.map(c => (
+        <Heading as="h6" variant="h1" key={c.id}>
+          {c.name}
+        </Heading>
+      ))}
+      <hr />
+
+      <div>
+        <button onClick={() => setPage(prev => prev + 1)}>next page</button>
+      </div>
+      
+      <div>
+        <button onClick={() => setPage(prev => prev - 1)}>prev page</button>
+      </div>
     </div>
   );
 }

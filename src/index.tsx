@@ -1,12 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import PoolProvider from 'components/PoolProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PoolProvider>
+      <App />
+    </PoolProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
