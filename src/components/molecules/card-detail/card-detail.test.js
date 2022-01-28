@@ -1,7 +1,7 @@
 import React from "react";
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import CardMolecule from './index';
+import CardDetail from './index';
 
 const character = {
     id: 1,
@@ -20,11 +20,11 @@ const character = {
 }
 
 test('content render', () => {
-    const view = render(<CardMolecule character={character} />);
+    const view = render(<CardDetail character={character} />);
     expect(view).toBeDefined();
 });
 
 test('content render correctly', () => {
-    const view = render(<CardMolecule character={character} />);
+    const view = render(<CardDetail character={character} />);
     expect(view.container).toHaveTextContent(character.name);
 });
