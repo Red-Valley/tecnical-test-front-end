@@ -3,12 +3,12 @@ import './TitleApp.css';
 
 function TitleApp() {
   return (
-    <div>
-        <h1>
-          App de Objetivos
+    
+        <h1 className="TitleApp">
+          Consigue tus objetivos con ReactJs
         </h1>
 
-    </div>
+    
   );
 }
 

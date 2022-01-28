@@ -7,16 +7,11 @@ function TodoItem(props) {
   return (
     <div>
       <li className="TodoItem">
-        {/* <span
-          className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
-          onClick={props.onComplete}
-        >
-          √
-        </span> */}
+         
         <Checkbox
-          value={`${props.completed}`}
+          value={props.completed}
+          checked={props.completed}
           onClick={props.onComplete}
-          
           inputProps={{
             'aria-label': 'Checkbox A',
           }}

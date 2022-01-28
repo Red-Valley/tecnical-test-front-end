@@ -1,15 +1,13 @@
-import React from "react";
+import React, {  } from "react";
+
 import './Modal.css'
 
 
-function Modal() {
+function Modal( props ) {
 
-
-  return (
-        <div>
-          hola
-        </div>
-  );
+    return (
+       <div></div>
+    );
 }
 
 export default Modal;

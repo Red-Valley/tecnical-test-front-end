@@ -1,13 +1,14 @@
 body {
-  margin     : 0;
-  padding    : 0;
-  background : #F2F4F5;
-  color      : #1E1E1F;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  margin          : 0;
+  padding         : 0;
+  color           : white;
+  font-family     : 'Montserrat', Arial, Helvetica, sans-serif;
+  background-image: radial-gradient(circle at top right, rgb(47, 245, 202),rgb(14, 125, 248));
+  background-size : auto;
+  
 }
-
 #root {
   margin    : 0 24px;
   position  : relative;
-  min-height: 100vh;
+  max-height: 100vh;
 }

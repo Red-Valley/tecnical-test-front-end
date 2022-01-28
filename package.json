@@ -20,6 +20,7 @@
     "react-dom": "^17.0.2",
     "react-drag-drop-files": "^2.2.5",
     "react-scripts": "^3.0.1",
+    "react-sortablejs": "^6.0.3",
     "sortablejs": "^1.14.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
@@ -49,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/sortablejs": "^1.10.7",
     "chokidar": "^3.5.3"
   }
 }
