@@ -10,7 +10,7 @@ function App() {
     <>
       <Navbar>
         <Container>
-          <Navbar.Brand>The Rick and Morty</Navbar.Brand>
+          <Navbar.Brand>The Rick and Morty App</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
