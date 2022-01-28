@@ -35,7 +35,7 @@ const CardDetail = ({ character = {} }) => {
             Specie: <span>{species}</span>
           </p>
           <p className="card-text">
-            type: <span>{type}</span>
+            type: <span>{type || "Unknown"}</span>
           </p>
         </Col>
       </Row>

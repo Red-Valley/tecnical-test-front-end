@@ -7,7 +7,8 @@ import {
 } from "../../../store/selectors";
 import { getDetail } from "../../../store/actions";
 import CardDetail from "../../molecules/card-detail";
-import { Container } from "react-bootstrap";
+import { Container, Spinner, Stack } from "react-bootstrap";
+import "./detail.scss"
 
 const Detail = () => {
   const { id } = useParams();
@@ -20,13 +21,19 @@ const Detail = () => {
   }, [dispatch, id]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return (
+      <Stack  className="col-md-1 mx-auto">
+          <div>
+            <Spinner className="justify-content-md-center loading-icon" animation="border" variant="primary" />
+          </div>
+      </Stack>
+    );
   }
 
   return (
     <Container>
       <Link to="/" className="btn btn-secondary btn-lg">
-        back
+        Go Back To Main List
       </Link>
       <CardDetail character={detail} />
     </Container>

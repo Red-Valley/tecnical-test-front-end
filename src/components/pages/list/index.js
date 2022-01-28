@@ -15,6 +15,10 @@ const List = () => {
     dispatch({ type: getData });
   }, [dispatch]);
 
+  if (!results) {
+    window.location.reload();
+  }
+  
   return (
     <>
       <SearchBar value={filter} />

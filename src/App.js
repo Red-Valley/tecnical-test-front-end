@@ -14,7 +14,7 @@ function App() {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              By: <span>Jose Miguel Mejia Chaverra</span>
+               <span className="nav-span">By: Jose Miguel Mejia Chaverra</span>
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
