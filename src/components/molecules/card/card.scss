@@ -1,0 +1,16 @@
+.card-container {
+  margin-bottom: 20px;
+
+  .card-text {
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+
+    span {
+      font-weight: 400;
+      font-size: small;
+    }
+  }
+}
