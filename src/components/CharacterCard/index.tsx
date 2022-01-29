@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import { Image } from '@chakra-ui/react';
-import { StatusContainer } from './StatusContainer';
+import { StatusContainer } from './components/StatusContainer';
 
 interface Props {
   image: string;
