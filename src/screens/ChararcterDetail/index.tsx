@@ -2,17 +2,25 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import CharacterCard from 'components/CharacterCard';
 import { useGetCharacterByIdQuery } from 'services/rickAndMortyService';
-import { Container, Text } from '@chakra-ui/react';
+import { Container, Heading } from '@chakra-ui/react';
 
 function ChararcterDetail() {
   const { characterId } = useParams();
-  const { data, error, isLoading, isFetching } = useGetCharacterByIdQuery({ id: Number(characterId) });
+  const { data, error, isLoading } = useGetCharacterByIdQuery({ id: Number(characterId) });
 
-  if (isLoading) return <Text color="white">isLoading esta cargndo...</Text>;
+  if (isLoading)
+    return (
+      <Heading as="h1" variant="bigTitle" color="white">
+        cargndo...
+      </Heading>
+    );
 
-  if (isFetching) return <Text color="white">isFetching esta cargndo...</Text>;
-
-  if (error) return <Text color="white">algo malo paso</Text>;
+  if (error)
+    return (
+      <Heading as="h1" variant="bigTitle" color="white">
+        algo malo paso
+      </Heading>
+    );
 
   return (
     <Container

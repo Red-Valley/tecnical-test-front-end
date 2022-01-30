@@ -26,7 +26,7 @@ function ChararterCollection() {
 
   if (isLoading) return <p>cargndo...</p>;
 
-  if (error) return <p>algo malo paso</p>;
+  if (error) throw new Error('Fetching Error');
 
   return (
     <Container minW="100vw">
