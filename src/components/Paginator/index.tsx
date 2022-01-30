@@ -1,22 +1,22 @@
 import * as React from 'react';
 import { HStack } from '@chakra-ui/react';
 import { range } from './utils/range';
+import { useSelector, useDispatch } from 'hooks/store';
 import { ArrowBackIcon, ArrowForwardIcon, ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
+import { prevPage, nextPage, setCurrentPage } from 'config/store/paginator';
 import Button from './components/Button';
 
-// eslint-disable-next-line no-unused-vars
-type fn = (n: number) => void;
-
 interface Props {
-  currentPage: number;
   lastPage: number;
   stepPaginator?: number;
-  setCurrentPage: fn;
 }
 
 const initialPage = 1;
 
-function Paginator({ currentPage, lastPage, stepPaginator = 4, setCurrentPage }: Props) {
+function Paginator({ lastPage, stepPaginator = 4 }: Props) {
+  const currentPage = useSelector(state => state.paginator.value);
+  const dispatch = useDispatch();
+
   const [initialRange, setInitialRange] = React.useState(2);
 
   const calculateRange = React.useMemo(() => {
@@ -31,10 +31,10 @@ function Paginator({ currentPage, lastPage, stepPaginator = 4, setCurrentPage }:
         <Button
           onClick={() => {
             const nextPage = currentPage - 1;
-            setCurrentPage(nextPage);
             if (nextPage < calculateRange[0] && nextPage !== initialPage) {
               setInitialRange(nextPage - stepPaginator + 1);
             }
+            dispatch(prevPage());
           }}
         >
           <ArrowBackIcon />
@@ -42,7 +42,7 @@ function Paginator({ currentPage, lastPage, stepPaginator = 4, setCurrentPage }:
       )}
       <Button
         onClick={() => {
-          setCurrentPage(initialPage);
+          dispatch(setCurrentPage(initialPage));
           setInitialRange(initialPage + 1);
         }}
         {...(initialPage === currentPage && { style: { color: 'black', backgroundColor: 'white' } })}
@@ -65,7 +65,7 @@ function Paginator({ currentPage, lastPage, stepPaginator = 4, setCurrentPage }:
       {calculateRange.map(r => (
         <Button
           key={`square-${r * Math.random()}`}
-          onClick={() => setCurrentPage(r)}
+          onClick={() => dispatch(setCurrentPage(r))}
           {...(r === currentPage && { style: { color: 'black', backgroundColor: 'white' } })}
         >
           {r}
@@ -76,7 +76,7 @@ function Paginator({ currentPage, lastPage, stepPaginator = 4, setCurrentPage }:
           onClick={() =>
             setInitialRange(prev => {
               const newInitialRange = prev + stepPaginator;
-              setCurrentPage(newInitialRange);
+              dispatch(setCurrentPage(newInitialRange));
               return newInitialRange;
             })
           }
@@ -89,7 +89,7 @@ function Paginator({ currentPage, lastPage, stepPaginator = 4, setCurrentPage }:
         onClick={() =>
           setInitialRange(() => {
             const newInitialRange = lastPage - stepPaginator;
-            setCurrentPage(lastPage);
+            dispatch(setCurrentPage(lastPage));
             return newInitialRange;
           })
         }
@@ -99,10 +99,10 @@ function Paginator({ currentPage, lastPage, stepPaginator = 4, setCurrentPage }:
       {currentPage !== lastPage && (
         <Button
           onClick={() => {
-            const nextPage = currentPage + 1;
-            setCurrentPage(nextPage);
-            if (nextPage > calculateRange[calculateRange.length - 1] && nextPage !== lastPage) {
-              setInitialRange(nextPage);
+            const nextPageCounter = currentPage + 1;
+            dispatch(nextPage());
+            if (nextPageCounter > calculateRange[calculateRange.length - 1] && nextPageCounter !== lastPage) {
+              setInitialRange(nextPageCounter);
             }
           }}
         >

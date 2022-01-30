@@ -1,14 +1,15 @@
-import { Container, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
-import CharacterCard from 'components/CharacterCard';
-import Paginator from 'components/Paginator';
-import { Search2Icon } from '@chakra-ui/icons';
-import { debounce } from 'utils/debouce';
-import { useGetCharacterListQuery } from 'services/rickAndMortyService';
-import { Link } from 'react-router-dom';
 import React from 'react';
+import { Container, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { useGetCharacterListQuery } from 'services/rickAndMortyService';
+import CharacterCard from 'components/CharacterCard';
+import { Search2Icon } from '@chakra-ui/icons';
+import Paginator from 'components/Paginator';
+import { useSelector } from 'hooks/store';
+import { debounce } from 'utils/debouce';
+import { Link } from 'react-router-dom';
 
 function ChararterCollection() {
-  const [page, setPage] = React.useState(1);
+  const page = useSelector(state => state.paginator.value);
   const [search, setSearch] = React.useState('');
 
   const handleSetQuery = (queryParam: string) => {
@@ -38,6 +39,9 @@ function ChararterCollection() {
           <Input type="tel" placeholder="Search at Rick and mory" onChange={handleSearch} color="white" />
         </InputGroup>
       </Container>
+      <Container centerContent my={4}>
+        <Paginator lastPage={data?.info?.pages || 0} />;
+      </Container>
       <Container
         maxW="7xl"
         centerContent
@@ -61,7 +65,7 @@ function ChararterCollection() {
         ))}
       </Container>
       <Container centerContent mb={4}>
-        <Paginator currentPage={page} lastPage={data?.info?.pages || 0} setCurrentPage={setPage} />
+        <Paginator lastPage={data?.info?.pages || 0} />;
       </Container>
     </Container>
   );
